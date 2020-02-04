@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgWe Tessel Monitor</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/bootstrap.min.css">
+  <link rel="stylesheet" href="/bootstrap-theme.min.css">
+  <script src="/chart.js"></script>
+  <script src="/dashboard.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+  <h1>Hello from AgWe!</h1>
+
+  <div class="row">
+  <h2>
+    <div class="col-md-4">Temp:&nbsp;
+    <button type="button" class="btn btn-primary btn-lg active">
+      <div id="temp"></div>
+    </button>
+    </div>
+    <div class="col-md-4">Humidity:&nbsp;
+    <button type="button" class="btn btn-primary btn-lg active">
+      <div id="humid"></div>
+    </button>
+    </div>
+    <div class="col-md-4">Light:&nbsp;
+    <button type="button" class="btn btn-primary btn-lg active">
+      <div id="light"></div>
+    </button>
+    </div>
+  </h2>
+  </div>
+  
+  <div class="row canvas-holder">
+    <div class="col-md-4">
+      <canvas id="temp-chart"></canvas>
+    </div>
+    <div class="col-md-4">
+      <canvas id="humid-chart"></canvas>
+    </div>
+    <div class="col-md-4">
+      <canvas id="light-chart"></canvas>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" id="temp-data-holder">
+      <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading" id="temp-heading">Temp History</div>
+              <!-- Table -->
+      <table class="table" id="temp-table">
+          <thead><tr>
+              <th>Time</th>
+              <th>Temp</th>
+          </tr></thead>
+            <tbody id="temp-body"></tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="col-md-4" id="humid-data-holder">
+      <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading" id="humid-heading">Humidity History</div>
+        <!-- Table -->
+          <table class="table" id="humid-table">
+          <thead><tr>
+              <th>Time</th>
+              <th>Humidity</th>
+          </tr></thead>
+          <tbody id="humid-body"></tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="col-md-4" id="light-data-holder">
+      <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading" id="light-heading">Light History</div>
+        <!-- Table -->
+        <table class="table" id="light-table">
+        <thead><tr>
+            <th>Time</th>
+            <th>Light</th>
+          </tr></thead>
+          <tbody id="light-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
