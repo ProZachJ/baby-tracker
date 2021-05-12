@@ -20,6 +20,6 @@
   "readme": "umm",
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "chart.js": "^2.0.2"
+    "chart.js": "^2.9.4"
   }
 }
